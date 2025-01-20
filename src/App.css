@@ -1,11 +1,76 @@
+@font-face {
+  font-family: 'GangWolfik';
+  src: url('.\assets\fonts\Tenkai DEMO.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   max-width: 1280px;
+  height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
+body {
+  font-family: 'GangWolfik', sans-serif;
+}
+
+.main-cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0));
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; 
+  animation: slideup 1s ease forwards;
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(100%); 
+    opacity: 0; 
+  }
+  to {
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+h1 {
+  font-family: 'GangWolfik', sans-serif;
+  font-size: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  display: flex;
+  margin: 0;
+  z-index: 2;
+  animation: appear 2s ease forwards;
+
+}
+
+@keyframes appear {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
+
+
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -39,4 +104,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
