@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap');
+
+html{
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: center;
+
+}
+
 #root {
   max-width: 1280px;
   height: 100vh;
@@ -16,17 +24,40 @@ body {
   font-family: 'GangWolfik', sans-serif;
 }
 
+.header{
+  position: sticky;
+  position: absolute;
+  top: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.header button{
+  background-color: transparent;
+  border: none;
+}
+
+.header img{
+  height: 3em;
+  width: 3em;
+}
+
 .main-cont{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: relative;
+  z-index: 1;
+
 }
 
 .container {
+  position: static;
   display: flex;
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0));
   border-radius: 50%;
   align-items: center;
@@ -50,9 +81,8 @@ h1 {
   font-family: 'GangWolfik', sans-serif;
   font-size: 10rem;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
+  align-self: center;
+  justify-content: center;
   display: flex;
   margin: 0;
   z-index: 2;
@@ -69,6 +99,94 @@ h1 {
   }
 }
 
+
+.about{
+  height: 100vh;
+  width: 900px;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  z-index: 3;
+  position: relative;
+}
+
+.about-me h2{
+  font-size: 3rem;
+}
+
+.about-me p{
+  font-size: 1.5rem;
+  font-family: "Potta One", serif;
+
+}
+
+.about-me{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pagoda{
+  height:600px;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  right: -12em;
+  bottom: -3em;
+}
+
+.pagoda img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.what-i-do{
+  height: 100vh;
+  max-width: 1200px;
+  scroll-snap-align: start;
+}
+
+.what-i-do h2{
+  font-size: 3rem;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin: 0 auto;
+  place-items: center;
+}
+
+.grid .grid-cont{
+  height: 250px;
+  width: 280px;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-cont img{
+  height: 100px;
+  width: 100px;
+}
+
+.grid-cont *{
+  margin: 0;
+  padding: 0;
+}
+
+.grid-cont p {
+  font-size: 1rem;
+  font-family: "Potta One", serif;
+}
 
 /* .logo {
   height: 6em;
