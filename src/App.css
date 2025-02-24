@@ -1,17 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap');
+
 @font-face {
-  font-family: 'GangWolfik';
-  src: url('.\assets\fonts\Tenkai DEMO.otf') format('truetype');
+  font-family: 'Tenkai';
+  src: url('./assets/fonts/Tenkai DEMO.otf') format('opentype'); /* Fix format */
   font-weight: normal;
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap');
-
-html{
+html {
   scroll-snap-type: y mandatory;
   scroll-snap-align: center;
-
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
+/* OVERLAY */
+
+.falling-leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
+  background-image: url('./assets/cherry.png'); /* Adjust path based on file location */
+  background-size: cover;
+  opacity: 1;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+  }
+  50% {
+      opacity: 1; 
+  }
+  100% {
+      transform: translateY(340vh) rotate(360deg);
+      opacity: 0; 
+  }
+}
+
+/* OVERLAY */
 
 #root {
   max-width: 1280px;
@@ -21,16 +57,17 @@ html{
 }
 
 body {
-  font-family: 'GangWolfik', sans-serif;
+  font-family: 'Tenkai', sans-serif;
 }
 
 .header{
   position: sticky;
-  position: absolute;
   top: 1em;
   display: flex;
   flex-direction: row;
   gap: 2em;
+  justify-self: center;
+  align-self: center;
 }
 
 .header button{
@@ -41,6 +78,7 @@ body {
 .header img{
   height: 3em;
   width: 3em;
+  
 }
 
 .main-cont{
@@ -50,8 +88,78 @@ body {
   height: 100%;
   position: relative;
   z-index: 1;
+}
+
+.mountains{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
 
 }
+
+.mountain-cont{
+  position:relative;
+  height: 100%;
+  width: 100%;
+}
+
+.mountain-cont .img0 {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  object-fit: cover;
+  left: 0;
+  filter: invert(15%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 5;
+  animation: slideup 1s ease forwards;
+}
+
+.mountain-cont .img1 {
+  height: 230px;
+  width: 50%;
+  position: absolute;
+  bottom: 4em;
+  object-fit: cover;
+  right: 0;
+  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 4;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+
+
+}
+
+.mountain-cont .img2 {
+  height: 230px;
+  width: 50%;
+  position: absolute;
+  bottom: 4em;
+  object-fit: cover;
+  left: 0;
+  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
+  z-index: 4;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.mountain-cont .img3 {
+  height: 230px;
+  width: 50%;
+  position: absolute;
+  bottom: 7em;
+  object-fit: cover;
+  left: 50%;
+  transform: translateX(-25%);
+  filter: invert(10%) sepia(90%) saturate(4000%) hue-rotate(-5deg) brightness(1.2);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
 
 .container {
   position: static;
@@ -77,18 +185,15 @@ body {
   }
 }
 
+
 h1 {
-  font-family: 'GangWolfik', sans-serif;
+  font-family: 'Tenkai', sans-serif;
   font-size: 10rem;
   position: absolute;
-  align-self: center;
-  justify-content: center;
-  display: flex;
-  margin: 0;
-  z-index: 2;
-  animation: appear 2s ease forwards;
+  z-index: 1;
 
 }
+
 
 @keyframes appear {
   from {
@@ -114,10 +219,11 @@ h1 {
 
 .about-me h2{
   font-size: 3rem;
+  margin: 0em;
 }
 
 .about-me p{
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Potta One", serif;
 
 }
@@ -129,7 +235,39 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
+
+
+.call-to-action{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em; 
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.c1{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconcchi{
+  transition: all 0.5s ease;
+
+}
+
+.c1:hover .iconcchi{
+  color: red;
+}
+
 
 .pagoda{
   height:600px;
@@ -147,46 +285,118 @@ h1 {
   width: 100%;
   object-fit: cover;
 }
-
-.what-i-do{
-  height: 100vh;
-  max-width: 1200px;
-  scroll-snap-align: start;
-}
-
-.what-i-do h2{
-  font-size: 3rem;
-}
-
-.grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  margin: 0 auto;
-  place-items: center;
-}
-
-.grid .grid-cont{
-  height: 250px;
-  width: 280px;
-  place-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.grid-cont img{
-  height: 100px;
-  width: 100px;
-}
-
-.grid-cont *{
+.personal *{
   margin: 0;
   padding: 0;
 }
 
-.grid-cont p {
-  font-size: 1rem;
-  font-family: "Potta One", serif;
+
+.personal{
+  height: 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
+
+
+.goals{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.personal h1{
+  font-size: 2rem;
+}
+
+.goals .goal p{
+  margin-top: 1.5em;
+}
+.goal{
+  margin-top: 2em;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid red;
+  padding: 0.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Potta One", serif;
+
+}
+
+.goal h1{
+  font-family: 'Tenkai', sans-serif;
+  font-size: 1rem;
+}
+
+.hobby-fun{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.hobby, .fun{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.skills{
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stacks{
+  margin-top: 1em;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  padding: 1em 0 1em 0;
+  overflow: hidden;
+
+}
+
+.skills *{
+  margin: 0;
+  padding: 0;
+}
+
+.text-stacks{
+  height: 100px;
+  width: 200px;
+  border: 2px solid red;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.text-stacks h1{
+  font-size: 2rem;
+}
+
 
 /* .logo {
   height: 6em;
