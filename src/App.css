@@ -217,25 +217,24 @@ h1 {
   position: relative;
 }
 
-.about-me h2{
-  font-size: 3rem;
+.about-me h2 {
+  font-size: clamp(2rem, 5vw, 3rem); 
   margin: 0em;
 }
 
-.about-me p{
-  font-size: 1rem;
+.about-me p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   font-family: "Potta One", serif;
-
 }
+
 
 .about-me{
   height: 100%;
   width: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  
+  justify-content: center;
 }
 
 
@@ -257,6 +256,10 @@ h1 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.c1 a{
+  display: flex;
 }
 
 .iconcchi{
