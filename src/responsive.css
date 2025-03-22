@@ -1,0 +1,266 @@
+@media (min-width: 1600px) {
+
+    .mountain-cont .img0 {
+      height: 150px;
+    }
+    .mountain-cont .img2{
+        height: 300px;
+
+    }
+
+    .mountain-cont .img3{
+        height: 300px;
+
+    }
+    .mountain-cont .img1{
+        height: 300px;
+
+    }
+
+    .poganda{
+        height: 800px;
+        width: 800px;
+    }
+
+    .about{
+        width: 1100px;
+    }
+  }
+
+  
+  @media (max-width: 1200px) {
+    .poganda{
+        width: 400px;
+        height: 400px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .mountain-cont .img0{
+        width: 100%;
+        height: 140px;
+    }
+    .mountain-cont .img1{
+        width: 100%;
+        height: 280px;
+        right: -12em;
+        bottom: 4em;
+    }
+
+    .mountain-cont .img2{
+        width: 100%;
+        height: 300px;
+        bottom:7em;
+        left: -10em;
+    }
+
+    .mountain-cont .img3{
+        height: 280px;
+        width: 100%;
+        bottom: 12em;
+    }
+
+    .burger{
+        height: 50px;
+        width: 50px;
+        position: sticky;
+        top: 0;
+        background-color: yellow;
+    }
+
+ 
+
+    .about{
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .about-me{
+        width: 100%;
+        height: 50%;
+        margin-top: 5em;
+    }
+
+    .pagoda{
+        height: 50%;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .pagoda img{
+        max-width: 500px;
+        height: 100%;
+    }
+
+    .goals{
+        flex-direction: row;
+        padding:10px;
+    }
+
+    .hobby-fun {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+  }
+  
+  @media (max-width: 768px) {
+
+    .mountain-cont .img0{
+        width: 100%;
+        height: 120px;
+    }
+    .mountain-cont .img1{
+        width: 100%;
+        height: 260px;
+        right: -12em;
+        bottom: 2em;
+    }
+
+    .mountain-cont .img2{
+        width: 100%;
+        height: 260px;
+        bottom:5em;
+        left: -10em;
+    }
+
+    .mountain-cont .img3{
+        height: 260px;
+        width: 100%;
+        bottom: 10em;
+    }
+
+    .burger{
+        height: 50px;
+        width: 50px;
+        position: sticky;
+        top: 0;
+        background-color: yellow;
+    }
+
+ 
+
+    .about{
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .about-me{
+        width: 100%;
+        height: 50%;
+        margin-top: 5em;
+    }
+
+    .pagoda{
+        height: 50%;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .pagoda img{
+        max-width: 500px;
+        height: 100%;
+    }
+
+    .goals{
+        flex-direction: column;
+        padding:10px;
+    }
+
+    .hobby-fun {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+  }
+  
+  @media (max-width: 576px) {
+    .container{
+        height: 300px;
+        width: 300px;
+    }
+
+    h1{
+        font-size: 6rem;
+    }
+
+    .mountain-cont .img0{
+        height: 140px;
+        bottom: 2em;
+    }
+
+    .mountain-cont .img1{
+        width: 100%;
+        height: 140px;
+        right: -6em;
+        bottom: 7em;
+    }
+
+    .mountain-cont .img2{
+        width: 100%;
+        height: 150px;
+        left: -5em;
+        bottom: 9em;
+    }
+
+    .mountain-cont .img3{
+        height: 200px;
+        width: 100%;
+        bottom: 12em;
+    }
+
+    .burger{
+        height: 50px;
+        width: 50px;
+        position: sticky;
+        top: 0;
+        background-color: yellow;
+    }
+
+    .about{
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .about-me{
+        width: 100%;
+        height: 50%;
+        margin-top: 5em;
+    }
+
+    .pagoda{
+        height: 50%;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .pagoda img{
+        max-width: 500px;
+        height: 100%;
+    }
+
+    .goals{
+        flex-direction: column;
+        padding:10px;
+    }
+
+    .hobby-fun {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }

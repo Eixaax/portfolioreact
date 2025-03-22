@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import "./responsive.css"
 import pagoda from "./assets/pagoda.png";
 import m0 from "./assets/m0.png";
 import m1 from "./assets/m1.png";
@@ -101,7 +102,7 @@ function App() {
   return (
     <>
 
-      <div class="falling-leaves"></div> 
+      <div className="falling-leaves"></div> 
 
 
       {!imagesLoaded ? ( // Show loading screen until images are loaded
@@ -111,30 +112,24 @@ function App() {
       ) : (
         <>
 
-        
-          <div className="header">
-            <button>Home</button>
-            <button>About me</button> 
-            <img src={pagoda} alt="Pagoda" />
-            <button>Portfolio</button>
-            <button>Contact</button>
-          </div>
-
+      
+          
           <div className="mountains">
             <div className="mountain-cont">
               <img src={m0} className="img0" alt="m0" />
               <img src={m1} className="img1" alt="m1" />
               <img src={m2} className="img2" alt="m2" />
-              <img src={m3} className="img3" alt="m3" />
+               <img src={m3} className="img3" alt="m3" />
             </div>
           </div>
 
           <div className="main-cont">
+          
             <h1>Isaac</h1>
             <div className="container"></div>
           </div>
 
-          <div className="about" id="about">
+           <div className="about" id="about">
             <div className="about-me">
               <h2>About Me</h2>
               <p>
@@ -169,7 +164,7 @@ function App() {
           <section className="personal">
             <h1>PERSONAL GOALS</h1>
 
-            <div className="goals">
+             <div className="goals">
 
               <div className="goal">
                 <h1>2025 - Graduate</h1>
@@ -186,6 +181,7 @@ function App() {
               </div>
               
             </div> 
+            
             <div className="hobby-fun">
               <div className="hobby">
                 <h1>Hobby</h1>
@@ -199,11 +195,11 @@ function App() {
                   <div className="goal">
                   <p>Pitch Black humor</p>
                 </div>
-              </div>
+              </div> 
             </div>
-          </section>
+          </section> 
 
-          <div className="skills">
+          {/* <div className="skills">
             <div className="stacks">
               <div className="text-stacks">
                 <h1>REACT</h1>
@@ -219,7 +215,7 @@ function App() {
               </div>
 
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </>
