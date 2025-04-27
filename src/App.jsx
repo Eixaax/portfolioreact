@@ -9,6 +9,7 @@ import samuraiAbout from "./assets/samurai-about.png";
 // import cloud2 from "./assets/cloud2.png";
 // import cloud3 from "./assets/cloud3.png";
 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -57,6 +58,7 @@ function App() {
   return (
     <div className="main-cont">
       {!imagesLoaded ? (
+
         <div className="loading-screen">
           <h2>Loading...</h2>
         </div>
@@ -134,6 +136,37 @@ function App() {
                     <a href="https://www.instagram.com/eixaxx/" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon className="iconcchi" icon={faInstagram} size="2x" color="#0f3252"/>
                     </a>
+
+      
+          
+          <div className="mountains">
+            <div className="mountain-cont">
+              <img src={m0} className="img0" alt="m0" />
+              <img src={m1} className="img1" alt="m1" />
+              <img src={m2} className="img2" alt="m2" />
+               <img src={m3} className="img3" alt="m3" />
+            </div>
+          </div>
+
+          <div className="main-cont">
+          
+            <h1>Isaac</h1>
+            <div className="container"></div>
+          </div>
+
+           <div className="about" id="about">
+            <div className="about-me">
+              <h2>About Me</h2>
+              <p>
+              I am an aspiring full-stack developer passionate about AI and web development.
+               I specialize in building dynamic, user-friendly applications using Django and React.
+                My curiosity for technology drives me to constantly explore new frameworks, tools,
+                 and best practices to enhance my skills and create innovative solutions.</p>
+              <div className="call-to-action">
+                <div className="c1">
+                  <a href="https://www.facebook.com/eixaax/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="iconcchi" icon={faFacebook} size="2x" color="white"/>
+                  </a>
                   </div>
                   <div className="c1">
                     <a href="https://github.com/Eixaax" target="_blank" rel="noopener noreferrer">
@@ -154,7 +187,7 @@ function App() {
             <div className="tech-stacks">
               
             </div>
-          </div>
+          </div> 
         </>
       )}
     </div>
