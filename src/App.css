@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 @font-face {
   font-family: 'Tenkai';
@@ -7,429 +7,365 @@
   font-style: normal;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-  scroll-snap-align: center;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+@font-face {
+  font-family: 'Gang of Three';
+  src: url('./assets/fonts/go3v2.ttf') format('truetype'); /* Correct format */
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* OVERLAY */
-
-.falling-leaves {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+:root {
+  --main-font: 'Gang of Three', sans-serif;
+  --secondary-font: 'Tenkai', sans-serif;
+  --japanese-font: 'Dela Gothic One', sans-serif;
+  --main-color: #dd3f3f;
+  --sub-color: #0f3252;
+  --header-font: clamp(3rem, 2.5vw, 5rem);
+  --text-font: clamp(0.7rem, 2.5vw, 1.2rem);
 }
 
-.leaf {
-  position: absolute;
-  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
-  background-image: url('./assets/cherry.png'); /* Adjust path based on file location */
-  background-size: cover;
-  opacity: 1;
-  animation: fall linear infinite;
+*{
+  padding: 0;
+  margin: 0;
 }
-@keyframes fall {
-  0% {
-      transform: translateY(-10vh) rotate(0deg);
-      opacity: 1;
-  }
-  50% {
-      opacity: 1; 
-  }
-  100% {
-      transform: translateY(340vh) rotate(360deg);
-      opacity: 0; 
-  }
-}
-
-/* OVERLAY */
 
 #root {
-  max-width: 1280px;
-  height: 100vh;
-  margin: 0 auto;
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
-
 body {
   font-family: 'Tenkai', sans-serif;
 }
 
-.header{
-  position: sticky;
-  top: 1em;
+.loading-screen{
+  height: 100vh;
+  width: 1200px;
   display: flex;
-  flex-direction: row;
-  gap: 2em;
-  justify-self: center;
-  align-self: center;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
 }
 
-.header button{
-  background-color: transparent;
-  border: none;
+
+.main-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  position: relative;
+  background-color: white;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-.header img{
-  height: 3em;
-  width: 3em;
+/* HERO PAGE */
+
+.hero-page{
+  height: 100vh;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay{
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: radial-gradient(circle,rgba(63, 94, 251, 0) 0%, rgba(0, 0, 0, 1) 90%);
+
+}
+
+.hero-img{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   
 }
 
-.main-cont{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-img img{
   height: 100%;
-  position: relative;
+  width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  z-index: 2;
+
+}
+
+.sun {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to bottom, #dd3f3f, transparent);
+  position: absolute;
+  border-radius: 50%;
+  margin-top: 2em;
   z-index: 1;
 }
 
-.mountains{
-  height: 100%;
-  width: 100%;
+.hero-name{
+  height: 200px;
+  width: 400px;
   position: absolute;
-  left: 0;
-  overflow: hidden;
+  opacity: 1;
+  z-index: 2;
+  background-image: radial-gradient(circle at center, white 10%, transparent 40%); /* Specify center of gradient */
 
 }
 
-.mountain-cont{
-  position:relative;
+.bg-name {
   height: 100%;
   width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.mountain-cont .img0 {
-  height: 100px;
-  width: 100%;
+.bg-name h2 {
+  font-family: var(--japanese-font);
+  font-size: 5rem;
+  color: var(--sub-color);
+  width: 100%; 
+  height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.heroh1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 4;
+  font-family: var(--main-font);
+  color: white;
+  font-size: 4rem;
+  -webkit-text-stroke: 1px var(--main-color);
+}
+
+
+.header{
+  height: 3em;
+  width: 80%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.logo h1 {
+  color: var(--sub-color);
+  font-family: var(--main-font);
+  font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+  -webkit-text-stroke: 1px var(--main-color);
+}
+
+.logo img{
+  height: 40px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.header .navs{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-direction: row;
+}
+
+.header .navs button{
+  font-size: clamp(0.7rem, 2.5vw, 1rem);
+  border: 0px;
+  background-color: transparent;
+  color: black;
+  padding: 0;
+  -webkit-text-stroke: 0.2px var(--main-color);
+  padding: 0.5em;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.navs button.active {
+  border: 2px solid var(--main-color);
+  outline: none;
+}
+
+
+.clouds{
   position: absolute;
   bottom: 0;
-  object-fit: cover;
-  left: 0;
-  filter: invert(15%) sepia(100%) saturate(10000%) hue-rotate(0deg);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  z-index: 5;
-  animation: slideup 1s ease forwards;
-}
-
-.mountain-cont .img1 {
-  height: 230px;
-  width: 50%;
-  position: absolute;
-  bottom: 4em;
-  object-fit: cover;
-  right: 0;
-  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  z-index: 4;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-
-
-}
-
-.mountain-cont .img2 {
-  height: 230px;
-  width: 50%;
-  position: absolute;
-  bottom: 4em;
-  object-fit: cover;
-  left: 0;
-  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
-  z-index: 4;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-}
-
-.mountain-cont .img3 {
-  height: 230px;
-  width: 50%;
-  position: absolute;
-  bottom: 7em;
-  object-fit: cover;
-  left: 50%;
-  transform: translateX(-25%);
-  filter: invert(10%) sepia(90%) saturate(4000%) hue-rotate(-5deg) brightness(1.2);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-}
-
-
-.container {
-  position: static;
-  display: flex;
-  width: 450px;
-  height: 450px;
-  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0));
-  border-radius: 50%;
+  width: 100%;
+  display: none;
   align-items: center;
   justify-content: center;
-  opacity: 0; 
-  animation: slideup 1s ease forwards;
-}
-
-@keyframes slideup {
-  from {
-    transform: translateY(100%); 
-    opacity: 0; 
-  }
-  to {
-    transform: translateY(0); 
-    opacity: 1; 
-  }
-}
-
-
-h1 {
-  font-family: 'Tenkai', sans-serif;
-  font-size: 10rem;
-  position: absolute;
-  z-index: 1;
-
-}
-
-
-@keyframes appear {
-  from {
-    opacity: 0; 
-  }
-  to {
-    opacity: 1; 
-  }
-}
-
-
-.about{
-  height: 100vh;
-  width: 900px;
-  scroll-snap-align: start;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
   z-index: 3;
+}
+
+.clouds img{
+  height: 200px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* ABOUT PAGE */
+
+/* ABOUT PAGE */
+
+.about-page{
+  height: 100vh;
+  width: 1200px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  visibility: 0;
+  transition: all 1s ease;
 }
 
-.about-me h2{
-  font-size: 3rem;
-  margin: 0em;
+.about-page.visible, .skills-page.visible{
+  opacity: 1;
+  visibility: visible;
 }
 
-.about-me p{
-  font-size: 1rem;
-  font-family: "Potta One", serif;
-
+.abouts{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sub-color);
 }
 
 .about-me{
-  height: 100%;
-  width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  justify-content: space-evenly;
+  height: 80%;
 }
 
+.about-me img{
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-me h3{
+  font-size: var(--header-font);
+  -webkit-text-stroke: 0.5px var(--main-color);
+
+}
+
+.about-me p{
+  font-family: var(--main-font);
+  -webkit-text-stroke: 0.5px var(--main-color);
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+
+}
 
 .call-to-action{
   display: flex;
-  flex-direction: row;
-  gap: 0.5em; 
+  align-items: center;
   width: 100%;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .c1{
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: 2px solid red;
   display: flex;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
+  color: #0f3252;
 }
 
-.iconcchi{
-  transition: all 0.5s ease;
+/* ABOUT PAGE */
 
-}
+/* SKILLS PAGE */
 
-.c1:hover .iconcchi{
-  color: red;
-}
-
-
-.pagoda{
-  height:600px;
-  width: 600px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  right: -12em;
-  bottom: -3em;
-}
-
-.pagoda img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.personal *{
-  margin: 0;
-  padding: 0;
-}
-
-
-.personal{
-  height: 100%;
-  max-width: 100%;
-  scroll-snap-align: start;
+.skills-page{
+  height: 100vh;
+  width: 1200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1em;
+  opacity: 0;
+  visibility: 0;
+  transition: all 1s ease;
+}
+
+.skills-page.visible{
+  opacity: 1;
+  visibility: visible;
+  color: black;
 }
 
 
-.goals{
-  height: 50%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
 
-.personal h1{
-  font-size: 2rem;
-}
-
-.goals .goal p{
-  margin-top: 1.5em;
-}
-.goal{
-  margin-top: 2em;
-  height: 100px;
-  width: 200px;
-  border-radius: 10px;
-  border: 2px solid red;
-  padding: 0.5em;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Potta One", serif;
-
-}
-
-.goal h1{
-  font-family: 'Tenkai', sans-serif;
-  font-size: 1rem;
-}
-
-.hobby-fun{
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-.hobby, .fun{
-  height: 100%;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+/* SKILLS PAGE */
 
 
-.skills{
-  height: 100%;
-  width: 100%;
-  scroll-snap-align: start;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@media (max-width:1600px) {
 
-.stacks{
-  margin-top: 1em;
-  height: 200px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  padding: 1em 0 1em 0;
-  overflow: hidden;
-
-}
-
-.skills *{
-  margin: 0;
-  padding: 0;
-}
-
-.text-stacks{
-  height: 100px;
-  width: 200px;
-  border: 2px solid red;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.text-stacks h1{
-  font-size: 2rem;
-}
-
-
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .clouds{
+    bottom: -6em;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+
+
+@media (max-width:1200px) {
+  .hero-img img{
+    width: auto;
+  }
+
+  .about-page, .skills-page{
+    width: 100%;
+  }
+
+  .sun{
+    height: 150px;
+    width: 150px;
+  }
+
+  .clouds{
+    bottom: -4em;
   }
 }
 
-.card {
-  padding: 2em;
-}
+@media (max-width:768px) {
 
-.read-the-docs {
-  color: #888;
-} */
+  .about-page{
+    flex-direction: column;
+  }
+
+  .abouts{
+    height: 50%;
+    width: 100%;
+  }
+
+  .about-me{
+    height: 100%;
+    width: 80%;
+  }
+}
