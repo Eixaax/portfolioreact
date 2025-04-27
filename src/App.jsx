@@ -9,6 +9,7 @@ import samuraiAbout from "./assets/samurai-about.png";
 // import cloud2 from "./assets/cloud2.png";
 // import cloud3 from "./assets/cloud3.png";
 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -57,6 +58,7 @@ function App() {
   return (
     <div className="main-cont">
       {!imagesLoaded ? (
+
         <div className="loading-screen">
           <h2>Loading...</h2>
         </div>
@@ -134,6 +136,7 @@ function App() {
                     <a href="https://www.instagram.com/eixaxx/" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon className="iconcchi" icon={faInstagram} size="2x" color="#0f3252"/>
                     </a>
+
                   </div>
                   <div className="c1">
                     <a href="https://github.com/Eixaax" target="_blank" rel="noopener noreferrer">
@@ -152,9 +155,8 @@ function App() {
 
           <div className={`skills-page ${scrollY > 1000 ? "visible" : ""}`}>
             <div className="tech-stacks">
-
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </div>

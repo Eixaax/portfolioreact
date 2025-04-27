@@ -143,7 +143,6 @@ body {
 
 .heroh1{
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: center;
   position: absolute;
@@ -155,6 +154,9 @@ body {
   color: white;
   font-size: 4rem;
   -webkit-text-stroke: 1px var(--main-color);
+
+  flex-direction: column;
+  justify-content: center;
 }
 
 
