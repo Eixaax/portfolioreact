@@ -21,7 +21,7 @@ function App() {
   const [loadedImagesCount, setLoadedImagesCount] = useState(0);
 
   const handleImageLoad = () => {
-    setLoadedImagesCount((prevCount) => prevCount + 1); // Increment count when an image loads
+    setLoadedImagesCount((prevCount) => prevCount + 1); 
   };
 
   useEffect(() => {
@@ -152,7 +152,7 @@ function App() {
 
           <div className={`skills-page ${scrollY > 1000 ? "visible" : ""}`}>
             <div className="tech-stacks">
-              
+
             </div>
           </div>
         </>
