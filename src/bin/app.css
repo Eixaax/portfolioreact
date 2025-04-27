@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap');
+
+@font-face {
+  font-family: 'Tenkai';
+  src: url('./assets/fonts/Tenkai DEMO.otf') format('opentype'); /* Fix format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: center;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* OVERLAY */
+
+.falling-leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
+  background-image: url('./assets/cherry.png'); /* Adjust path based on file location */
+  background-size: cover;
+  opacity: 1;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+  }
+  50% {
+      opacity: 1; 
+  }
+  100% {
+      transform: translateY(340vh) rotate(360deg);
+      opacity: 0; 
+  }
+}
+
+/* OVERLAY */
+
+#root {
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  font-family: 'Tenkai', sans-serif;
+}
+
+.header{
+  position: sticky;
+  top: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-self: center;
+  align-self: center;
+}
+
+.header button{
+  background-color: transparent;
+  border: none;
+}
+
+.header img{
+  height: 3em;
+  width: 3em;
+  
+}
+
+.main-cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.mountains{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+
+}
+
+.mountain-cont{
+  position:relative;
+  height: 100%;
+  width: 100%;
+}
+
+.mountain-cont .img0 {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  object-fit: cover;
+  left: 0;
+  filter: invert(15%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 5;
+  animation: slideup 1s ease forwards;
+}
+
+.mountain-cont .img1 {
+  height: 230px;
+  width: 50%;
+  position: absolute;
+  bottom: 4em;
+  object-fit: cover;
+  right: 0;
+  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 4;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+
+
+}
+
+.mountain-cont .img2 {
+  height: 230px;
+  width: 50%;
+  position: absolute;
+  bottom: 4em;
+  object-fit: cover;
+  left: 0;
+  filter: invert(10%) sepia(90%) saturate(5000%) hue-rotate(-5deg) brightness(1.2);
+  z-index: 4;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.mountain-cont .img3 {
+  height: 230px;
+  width: 50%;
+  position: absolute;
+  bottom: 7em;
+  object-fit: cover;
+  left: 50%;
+  transform: translateX(-25%);
+  filter: invert(10%) sepia(90%) saturate(4000%) hue-rotate(-5deg) brightness(1.2);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+.container {
+  position: static;
+  display: flex;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0));
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; 
+  animation: slideup 1s ease forwards;
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(100%); 
+    opacity: 0; 
+  }
+  to {
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+
+h1 {
+  font-family: 'Tenkai', sans-serif;
+  font-size: 10rem;
+  position: absolute;
+  z-index: 1;
+
+}
+
+
+@keyframes appear {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
+
+
+.about{
+  height: 100vh;
+  width: 900px;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  z-index: 3;
+  position: relative;
+}
+
+.about-me h2{
+  font-size: 3rem;
+  margin: 0em;
+}
+
+.about-me p{
+  font-size: 1rem;
+  font-family: "Potta One", serif;
+
+}
+
+.about-me{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+
+.call-to-action{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em; 
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.c1{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconcchi{
+  transition: all 0.5s ease;
+
+}
+
+.c1:hover .iconcchi{
+  color: red;
+}
+
+
+.pagoda{
+  height:600px;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  right: -12em;
+  bottom: -3em;
+}
+
+.pagoda img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.personal *{
+  margin: 0;
+  padding: 0;
+}
+
+
+.personal{
+  height: 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+
+.goals{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.personal h1{
+  font-size: 2rem;
+}
+
+.goals .goal p{
+  margin-top: 1.5em;
+}
+.goal{
+  margin-top: 2em;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid red;
+  padding: 0.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Potta One", serif;
+
+}
+
+.goal h1{
+  font-family: 'Tenkai', sans-serif;
+  font-size: 1rem;
+}
+
+.hobby-fun{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.hobby, .fun{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.skills{
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stacks{
+  margin-top: 1em;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  padding: 1em 0 1em 0;
+  overflow: hidden;
+
+}
+
+.skills *{
+  margin: 0;
+  padding: 0;
+}
+
+.text-stacks{
+  height: 100px;
+  width: 200px;
+  border: 2px solid red;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.text-stacks h1{
+  font-size: 2rem;
+}
+
+
+/* .logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
