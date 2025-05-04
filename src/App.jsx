@@ -33,7 +33,7 @@ import sql from "./assets/sql.svg";
 import Pokemon from "./assets/pokemon.png";
 import baljeet from "./assets/baljeet.png";
 import ojt from "./assets/ojt.png";
-import se from "./assets/se.png";
+import se from "./assets/SE.png";
 import crimson from "./assets/crimson.png";
 import eco from "./assets/ecowatt.png";
 import powerhouse from "./assets/powerhouse.png";
