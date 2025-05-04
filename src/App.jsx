@@ -38,7 +38,7 @@ import se from "./assets/SE.png";
 import crimson from "./assets/crimson.png";
 import eco from "./assets/ecowatt.png";
 import powerhouse from "./assets/powerhouse.png";
-import scical from "./assets/sci-cal.png";
+import scical from "./assets/SCI-CAL.png";
 
 function App() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -51,7 +51,7 @@ function App() {
   const handleImageLoad = () => {
     setLoadedImagesCount((prevCount) => prevCount + 1); 
   };
-  
+
 
   useEffect(() => {
     const handleScroll = () => {
