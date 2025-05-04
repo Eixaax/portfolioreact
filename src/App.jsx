@@ -11,6 +11,7 @@ import border from "./assets/border.jpg";
 import hud from "./assets/hud.png";
 
 import samuraiAbout from "./assets/avatar.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -179,6 +180,7 @@ function App() {
   return (
     <div className="main-cont">
       {!imagesLoaded ? (
+
         <div className="loading-screen">
           <h2>Loading...</h2>
         </div>
@@ -283,6 +285,7 @@ function App() {
                     <a href="https://www.instagram.com/eixaxx/" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon className="iconcchi" icon={faInstagram} size="2x" color="#0f3252"/>
                     </a>
+
                   </div>
                   <div className="c1">
                     <a href="https://github.com/Eixaax" target="_blank" rel="noopener noreferrer">
