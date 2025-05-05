@@ -32,8 +32,24 @@ button, a {
   --sub-color: #0f3252;
   --header-font: clamp(3rem, 2.5vw, 5rem);
   --text-font: clamp(0.7rem, 2.5vw, 1.2rem);
+  --text-color: #0f3252;
+  --edge-color: white;
+  --brightness: brightness(80%);
+
+  --nav:rgba(255, 255, 255, 0.322);
+  --background-color: rgb(221, 208, 208);
 }
 
+.dark-mode {
+  --main-color: #ff6b6b;
+  --sub-color: #f0f8ff;
+  --text-color: #f0f0f0;
+  --edge-color: #dd3f3f;
+  --nav:rgb(33 33 33 / 32%);
+  --background-color: rgb(30, 18, 75);
+  --brightness: brightness(100%);
+
+}
 html{
   scroll-behavior: smooth;
 }
@@ -63,6 +79,33 @@ body {
   -webkit-text-stroke: 1px var(--main-color);
 }
 
+.modes{
+  height: 50px;
+  width: auto;
+  background-color: transparent;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 1000;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  transition: all 1s ease;
+
+}
+
+
+.modes:hover{
+  color: var(--sub-color);
+}
+
+
+.modes svg{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 .main-cont {
   width: 100%;
@@ -72,7 +115,7 @@ body {
   justify-content: center;
   overflow-y: auto;
   position: relative;
-  background-color: white;
+  background-color: var(--background-color);
   flex-direction: column;
   overflow-x: hidden;
 }
@@ -104,7 +147,10 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
+  opacity: 1;
+  z-index: 2;
+  filter: var(--brightness);  
+  transition: all 2s ease;
 }
 
 .hero-img img{
@@ -131,7 +177,6 @@ body {
   position: absolute;
   opacity: 1;
   z-index: 2;
-  background-image: radial-gradient(circle at center, white 10%, transparent 30%); /* Specify center of gradient */
 
 }
 
@@ -156,6 +201,7 @@ body {
   align-items: center;
   text-align: center;
   -webkit-text-stroke: 1px white;
+  transition: all 1s ease;
 
 
 }
@@ -172,7 +218,9 @@ body {
   font-family: var(--main-font);
   color: var(--sub-color);
   font-size: 4rem;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px var(--edge-color);
+  transition: all 1s ease;
+
 }
 
 .header {
@@ -186,12 +234,13 @@ body {
   justify-content: space-between;
   align-items: center;
   
-  /* New glassy styles */
-  background: rgba(255, 255, 255, 0.322); /* semi-transparent white */
-  backdrop-filter: blur(2px); /* blur the background behind it */
-  -webkit-backdrop-filter: blur(2px); /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* optional subtle border */
-  border-radius: 10px; /* optional rounded corners */
+  background: var(--nav); 
+  backdrop-filter: blur(2px); 
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px; 
+  transition: all 1s ease;
+
 }
 
 .logo {
@@ -206,15 +255,15 @@ body {
   font-family: var(--main-font);
   font-size: clamp(1.2rem, 2.5vw, 2.5rem);
   -webkit-text-stroke: 1px var(--main-color);
+  transition: all 1s ease;
+
 }
 
 .logo img {
   height: 40px;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
-/* Default styles - show nav on desktop */
 .header .navs {
   display: flex;
   align-items: center;
@@ -226,7 +275,7 @@ body {
   position: relative;
   font-size: clamp(0.7rem, 2.5vw, 1rem);
   background-color: transparent;
-  color: black;
+  color: var(--text-color);
   padding: 0.5em 1em;
   transition: color 0.3s ease;
   outline: none;
@@ -278,6 +327,8 @@ body {
   height: 3px;
   background-color: var(--main-color);
   border-radius: 5px;
+  transition: all 1s ease;
+
 }
 
 
@@ -325,6 +376,8 @@ body {
   justify-content: center;
   color: var(--sub-color);
   position: relative;
+  transition: all 1s ease;
+
 }
 
 .about-me{
@@ -390,12 +443,16 @@ body {
   font-family: var(--main-font);
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   -webkit-text-stroke: 1px var(--main-color);
+  transition: all 1s ease;
+
 }
 
 .hud-name h3{
   font-family: 'Times New Roman', Times, italic;
   font-size: clamp(0.7rem, 2.5vw, 1.2rem);
   -webkit-text-stroke: 0.5px var(--main-color);
+  transition: all 1s ease;
+
 }
 
 
@@ -419,12 +476,16 @@ body {
   font-size: var(--header-font);
   -webkit-text-stroke: 1px var(--main-color);
   font-family: var(--main-font);
+  transition: all 1s ease;
+
 }
 
 .about-me p{
   font-family: var(--main-text-font);
   -webkit-text-stroke: 0.5px var(--main-color);
   font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+  transition: all 1s ease;
+
 
 }
 
@@ -441,6 +502,7 @@ body {
   color: #0f3252;
   transition: all 0.3s ease;
 
+
 }
 
 .c1:hover{
@@ -448,13 +510,15 @@ body {
 }
 
 .iconcchi {
-  color: #0f3252;
+  color: var(--main-color);
   transition: color 0.3s ease, transform 0.3s ease;
+  
 }
 
 .c1:hover .iconcchi {
-  color: var(--main-color);
+  color: var(--sub-color);
   transform: scale(1.2);
+  
 }
 
 /* ABOUT PAGE */
@@ -510,7 +574,6 @@ body {
 .stack {
   width: 60px;
   height: 60px;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -612,6 +675,8 @@ body {
   font-size: clamp(1rem, 2.5vw, 2rem);
   color: var(--sub-color);
   -webkit-text-stroke: 1px var(--main-color);
+  transition: all 1s ease;
+
 
 }
 
@@ -623,7 +688,7 @@ body {
 .skill-bar{
   width: 60%;
   height: 3em;
-  background-color: #ddd;
+  background-color: #ffffff7e;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
@@ -631,7 +696,7 @@ body {
 
 .bar{
   height: 100%;
-  background-color:#dd3f3fa2;
+  background-color:#e21919;
   border-radius: 20px;
   transition: all 0.3s ease;  
 }
@@ -660,8 +725,9 @@ body {
   flex-direction: column;
   text-align: center;
   font-family: var(--main-text-font);
+  color: var(--text-color);
   -webkit-text-stroke: 0.1px var(--main-color);
-
+  transition: all 1s ease;
 }
 
 .other-dets p{
@@ -697,6 +763,10 @@ body {
   height: 50%;
 }
 
+.box{
+  background-color: var(--background-color)!important;
+}
+
 .box {
   position: relative;
   padding: 40px;
@@ -707,12 +777,13 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  color: white;
+  color: var(--text-color);
   overflow: hidden;
   z-index: 0;
   opacity: 0;
   visibility: hidden;
   transform: translateY(100px);
+  background-color: var(--background-color);
   transition: all 1s ease;
   --border-angle: 0turn; 
   --main-bg: conic-gradient(
@@ -760,11 +831,13 @@ body {
   backdrop-filter: blur(2px); /* blur the background behind it */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
   border: 1px solid rgba(255, 255, 255, 0.3); /* optional subtle border */
-  border-radius: 10px; /* optional rounded corners */
+  border-radius: 20px; /* optional rounded corners */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  background-color: var(--background-color)!important;
+
 }
 
 .box-content h1 {
@@ -772,6 +845,8 @@ body {
   font-size: clamp(0.7rem, 2.5vw, 1.5rem);
   color: var(--sub-color);
   -webkit-text-stroke: 0.5px var(--main-color);
+  transition: all 1s ease;
+
 }
 
 .box-content p{
@@ -779,6 +854,8 @@ body {
   -webkit-text-stroke: 0.5px var(--main-color);
   font-family: var(--main-text-font);
   color: var(--sub-color);
+  transition: all 1s ease;
+
 
 }
 
@@ -825,6 +902,8 @@ body {
   text-align: center;
   -webkit-text-stroke: 1px var(--main-color, #3498db);
   margin-bottom: 2rem;
+  transition: all 1s ease;
+
 
 }
 
@@ -893,6 +972,7 @@ body {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: var(--main-color, #3498db);
+  
 }
 
 .project-content p {
@@ -900,6 +980,8 @@ body {
   color: #666;
   line-height: 1.4;
   font-family: var(--main-text-font);
+  transition: all 1s ease;
+
   -webkit-text-stroke: 0.2px var(--main-color);
 }
 
@@ -1045,6 +1127,8 @@ body {
   font-size: clamp(2.5rem, 2.5vw, 5rem);
   -webkit-text-stroke: 1px var(--main-color);
   color: var(--sub-color);
+  transition: all 1s ease;
+
 }
 
 .blogs-page.visible {
@@ -1080,6 +1164,30 @@ body {
 }
 
 /* BLOGS */
+
+
+/* CONTACT PAGE */
+
+.contact-page {
+  height: 100vh;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s ease;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+}
+
+.contact-page.visible {
+  opacity: 1;
+  visibility: visible;
+  color: black;
+}
+
+/* CONTACT PAGE */
 
 
 @media (max-width:1600px) {
@@ -1213,7 +1321,7 @@ body {
     right: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.9); /* Glassy white */
+    background-color: var(--background-color); /* Glassy white */
     backdrop-filter: blur(10px); /* Creates the glass effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari */
     flex-direction: column;
@@ -1412,3 +1520,4 @@ body {
 
 
 }
+
