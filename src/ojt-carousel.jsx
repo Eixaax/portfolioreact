@@ -3,7 +3,17 @@
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import orientation from "./assets/orientation.jpg";
-
+// import week1 from "./assets/week1.jpg";
+import week2 from "./assets/week2.jpg";
+import week3 from "./assets/week3.jpg";
+import week4 from "./assets/week4.jpg";
+import week5 from "./assets/week5.jpg";
+import week6 from "./assets/week6.jpg";
+import week7 from "./assets/week7.jpg";
+import week8 from "./assets/week8.jpg";
+import week9 from "./assets/week9.jpg";
+import week10 from "./assets/week10.jpg";
+import week11 from "./assets/week11.jpg";
 
 const ojtWeeks = [
   {
@@ -13,11 +23,11 @@ const ojtWeeks = [
     description: "First week at the Administration Office. Got introduced to the team had a short orientation session with our supervisor and the client discussing the project and help provide solutions to their problems.",
     date: "February 17 - February 21, 2025",
     image: orientation,
-    detailedDescription: "During my first week, I was warmly welcomed at the Administration Office. I had orientation sessions with my supervisor where we discussed the project scope and objectives. The team introduced me to their current workflows and challenges. I met with the client to understand their requirements and expectations. This week focused on acclimating to the work environment, learning about company policies, and setting up my workspace. By week's end, I had a clear understanding of my role in addressing the client's needs through this project.",
+    detailedDescription: "I was introduced to the team and given an orientation on the project’s goals and company policies. Meetings with my supervisor and the client helped clarify expectations and deliverables. By the end of the week, I had a clear understanding of my role in the project. I also set up my workspace and familiarized myself with the team’s workflow.",
     additionalImages: [
       orientation,
-      orientation,
-      orientation,
+      week7,
+      week5,
     ],
   },
   {
@@ -26,12 +36,12 @@ const ojtWeeks = [
     title: "System Architecture Design",
     description: "Spent time understanding the problem and creating the system architecture. Had my first code merged into the production branch.",
     date: "February 24 - February 28, 2025",
-    image: orientation,
-    detailedDescription: "This week was dedicated to analyzing the project requirements and designing the system architecture. I studied the existing infrastructure and proposed solutions to address the client's needs. After several discussions with the team, we finalized the architectural approach. I contributed my first code to the project, which was reviewed and merged into the production branch. This milestone gave me valuable experience in the team's development workflow and version control practices.",
+    image: week2,
+    detailedDescription: "I analyzed the project requirements and contributed to designing the system architecture. After discussions with the team, we finalized the technical approach. My first code contribution was reviewed and merged into the production branch, marking a key milestone. This experience helped me learn the team’s development and version control processes.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week2,
+      week8,
+      week3,
     ],
   },
   {
@@ -40,12 +50,12 @@ const ojtWeeks = [
     title: "Project Research and Resource Gathering",
     description: "Had a team meeting to discuss the project requirements. Spent time researching and gathering resources for the project.",
     date: "March 03 - March 07, 2025",
-    image: orientation,
-    detailedDescription: "We conducted thorough project requirement discussions this week, clarifying objectives and deliverables. I researched potential solutions, technologies, and best practices relevant to our project. This involved reviewing documentation, case studies, and technical resources. I compiled a resource repository that would support our development process. The team evaluated different approaches and began outlining our implementation strategy based on the gathered information.",
+    image: week3,
+    detailedDescription: "The team held detailed discussions to refine the project’s objectives and scope. I researched potential solutions, technologies, and best practices to support development. I compiled a repository of useful resources for future reference. This groundwork helped shape our implementation strategy moving forward.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week3,
+      week10,
+      week6,
     ],
   },
   {
@@ -54,12 +64,12 @@ const ojtWeeks = [
     title: "Workflow Presentation and Client Briefing",
     description: "Presented the workflow of the project to the team. Had a briefing with the client to discuss the project requirements.",
     date: "March 10 - March 14, 2025",
-    image: orientation,
-    detailedDescription: "I prepared and presented the proposed project workflow to both our internal team and the client. The presentation covered our development approach, timeline, and expected outcomes. During the client briefing, we clarified requirements and addressed their concerns. This collaborative session helped align everyone's expectations and resulted in valuable feedback that we incorporated into our plans. The week concluded with an updated project roadmap reflecting these discussions.",
+    image: week4,
+    detailedDescription: "I presented the proposed project workflow to both the internal team and the client. The briefing session allowed us to address questions and align on expectations. Client feedback was incorporated into an updated project plan. This ensured everyone was on the same page before moving into active development.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week4,
+      week9,
+      week11,
     ],
   },
   {
@@ -68,12 +78,12 @@ const ojtWeeks = [
     title: "Frontend Development and Integration",
     description: "Started integrating the frontend and following the design guidelines. Had a few bugs to fix and learned about the testing process.",
     date: "March 17 - March 21, 2025",
-    image: orientation,
-    detailedDescription: "This week focused on frontend development, where I implemented UI components according to the design specifications. I worked on integrating these components with the backend services, ensuring proper data flow and functionality. During testing, I identified and fixed several bugs, which provided hands-on experience with debugging techniques. The team introduced me to their testing protocols, including unit tests and integration testing procedures. By week's end, we had made significant progress in the user interface implementation.",
+    image: week5,
+    detailedDescription: "I began implementing frontend components based on the approved designs. Integration with backend services revealed a few bugs, which I debugged and fixed. The team walked me through their testing protocols, including unit and integration tests. By week’s end, we had made solid progress on the user interface.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week5,
+      week6,
+      week3,
     ],
   },
   {
@@ -82,12 +92,12 @@ const ojtWeeks = [
     title: "UI/UX Collaboration and Redesign",
     description: "Started collaborating with the design team on a new design for a much efficient user experience.",
     date: "March 24 - March 29, 2025",
-    image: orientation,
-    detailedDescription: "I began close collaboration with the UI/UX design team to improve the application's user experience. We analyzed user flows and identified areas for enhancement. Through brainstorming sessions, we developed wireframes and prototypes for the redesigned interface. I provided technical feedback on implementation feasibility while learning valuable design principles. This cross-functional work helped bridge the gap between design and development perspectives, resulting in more user-centric solutions.",
+    image: week6,
+    detailedDescription: "I collaborated closely with the UI/UX team to refine the application’s design. We analyzed user flows and identified areas for improvement, creating new wireframes and prototypes. My role involved providing technical feedback while learning design principles. This cross-team effort resulted in a more intuitive user experience.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week6,
+      week10,
+      week2,
     ],
   },
   {
@@ -96,12 +106,12 @@ const ojtWeeks = [
     title: "Design Finalization and Planning",
     description: "Started gathering new resources and materials for the project. Had a few meetings with the design team to discuss the project requirements.",
     date: "March 31 - April 04, 2025",
-    image: orientation,
-    detailedDescription: "This week involved finalizing design assets and planning their implementation. I gathered necessary resources, including UI libraries and design specifications. Multiple coordination meetings with the design team ensured all requirements were clearly understood and documented. We established a style guide and component library to maintain consistency across the application. This preparatory work created a solid foundation for the upcoming development phase.",
+    image: week7,
+    detailedDescription: "I worked on finalizing design assets and preparing development resources. Multiple meetings with the design team ensured all requirements were clearly documented. We established a style guide and component library for consistency. These preparations set the stage for efficient implementation in the coming weeks.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week7,
+      week3,
+      week11,
     ],
   },
   {
@@ -110,12 +120,12 @@ const ojtWeeks = [
     title: "Design Revision Implementation",
     description: "Started implementing the revisions and changes discussed in the design meetings. Had a few bugs to fix and learned about the testing process.",
     date: "April 07 - April 11, 2025",
-    image: orientation,
-    detailedDescription: "I implemented the design revisions agreed upon in previous meetings, updating UI components and user flows. This process involved addressing feedback from stakeholders while maintaining code quality. Several bugs emerged during implementation, which I resolved through systematic debugging. The team conducted regular code reviews and testing sessions, providing opportunities to improve both the product and my development skills. By week's end, the application reflected the updated designs accurately.",
+    image: week8,
+    detailedDescription: "I implemented the revised designs, updating UI components and fixing related issues. Regular code reviews and testing sessions helped maintain quality standards. The team provided feedback that improved both the product and my skills. By the end of the week, the application reflected the updated designs accurately.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week8,
+      week3,
+      week5,
     ],
   },
   {
@@ -124,12 +134,12 @@ const ojtWeeks = [
     title: "Backend System Integration",
     description: "The beginning of the backend integration process. adjusted the database and started implementing the API endpoints.",
     date: "April 14 - April 18, 2025",
-    image: orientation,
-    detailedDescription: "This week marked the start of backend integration work. I modified database structures to support new features and began implementing API endpoints. The focus was on creating robust, well-documented interfaces between frontend and backend systems. I learned about data validation, error handling, and performance optimization in API development. Regular synchronization with frontend developers ensured seamless integration between components.",
+    image: week9,
+    detailedDescription: "I began backend integration by adjusting the database schema and creating API endpoints. Focus areas included data validation, error handling, and performance optimization. Close coordination with frontend developers ensured smooth integration. This work laid the foundation for full system functionality.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week9,
+      week4,
+      week6,
     ],
   },
   {
@@ -138,12 +148,12 @@ const ojtWeeks = [
     title: "System Testing and Debugging",
     description: "Started debugging the application and testing the API endpoints. adjusting the frontend to match the backend.",
     date: "March 21 - March 25, 2025",
-    image: orientation,
-    detailedDescription: "The application underwent comprehensive testing this week. I debugged issues across both frontend and backend components, with particular attention to API endpoint reliability. Frontend adjustments were made to properly consume backend services and handle various response scenarios. We implemented automated tests and conducted manual testing to verify system behavior. This rigorous quality assurance process significantly improved the application's stability.",
+    image: week10,
+    detailedDescription: "I conducted thorough testing, debugging issues in both frontend and backend components. The frontend was adjusted to properly handle API responses and edge cases. Automated and manual tests were used to verify stability. These efforts significantly improved the application’s reliability.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week10,
+      week8,
+      week7,
     ],
   },
   {
@@ -152,12 +162,12 @@ const ojtWeeks = [
     title: "Final Project Presentation and Review",
     description: "Presented the final project to the team and the client. Had a few meetings to discuss the project and proceeded to the implementation of the concerns.",
     date: "April 28 - May 02, 2025",
-    image: orientation,
-    detailedDescription: "In our final week, I presented the completed project to both our internal team and the client. The demonstration showcased all implemented features and addressed initial requirements. Feedback sessions identified minor improvements, which we promptly implemented. We documented the system thoroughly and conducted knowledge transfer sessions. This concluding phase validated our work and provided valuable insights into the project lifecycle from conception to delivery.",
+    image: week11,
+    detailedDescription: "I presented the finalized project to the team and client, demonstrating all features. Feedback was addressed through quick iterations and fixes. Documentation and knowledge transfer sessions ensured a smooth handover. The project concluded successfully, meeting all initial requirements.",
     additionalImages: [
-      orientation,
-      orientation,
-      orientation,
+      week11,
+      week9,
+      week5,
     ],
   },
 ]
@@ -234,15 +244,26 @@ export default function OJTCarousel() {
     return indices
   }
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+
+    // Cleanup just in case component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isModalOpen])
+
   const openModal = () => {
     setIsModalOpen(true)
     setModalImageIndex(0)
-    document.body.style.overflow = "hidden" // Prevent scrolling when modal is open
   }
 
   const closeModal = () => {
     setIsModalOpen(false)
-    document.body.style.overflow = "" // Restore scrolling
   }
 
   const handleModalPrev = () => {
@@ -313,7 +334,7 @@ export default function OJTCarousel() {
             <button className="carousel-button next-button" onClick={handleNext} aria-label="Next week">
               <ChevronRight className="carousel-icon" />
             </button>
-          </div>
+          </div>  
 
           <div className="carousel-pagination">
             {ojtWeeks.map((_, index) => (
@@ -361,35 +382,35 @@ export default function OJTCarousel() {
         </div>
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className={`modal-overlay ${isModalOpen ? "visible" : ""}`} onClick={closeModal}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <h2>{ojtWeeks[activeIndex].week}</h2>
             <button className="modal-close" onClick={closeModal}>
               <X />
             </button>
+          </div>
 
-            <div className="modal-header">
-              <h2>
-                {ojtWeeks[activeIndex].week} - {ojtWeeks[activeIndex].title}
-              </h2>
-              <p className="modal-date">{ojtWeeks[activeIndex].date}</p>
-            </div>
-
-            <div className="modal-carousel">
+          <div className="modal-body">
+            <div className="carousel-cont">
               <button className="modal-carousel-button prev" onClick={handleModalPrev}>
                 <ChevronLeft />
               </button>
 
               <div className="modal-carousel-container">
                 <img
-                  src={ojtWeeks[activeIndex].additionalImages[modalImageIndex] || "/placeholder.svg"}
+                  src={
+                    ojtWeeks[activeIndex]?.additionalImages[modalImageIndex] ||
+                    "/placeholder.svg"
+                  }
                   alt={`Week ${ojtWeeks[activeIndex].id} image ${modalImageIndex + 1}`}
                   className="modal-carousel-image"
                 />
                 <div className="modal-image-counter">
                   {modalImageIndex + 1} / {ojtWeeks[activeIndex].additionalImages.length}
                 </div>
+
+
               </div>
 
               <button className="modal-carousel-button next" onClick={handleModalNext}>
@@ -398,23 +419,15 @@ export default function OJTCarousel() {
             </div>
 
             <div className="modal-description">
-              <h3>My Experience</h3>
+              <h1>{ojtWeeks[activeIndex].title}</h1>
+              <h2>{ojtWeeks[activeIndex].date}</h2>
               <p>{ojtWeeks[activeIndex].detailedDescription}</p>
             </div>
-
-            <div className="modal-pagination">
-              {ojtWeeks[activeIndex].additionalImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`pagination-dot ${modalImageIndex === index ? "active" : ""}`}
-                  onClick={() => setModalImageIndex(index)}
-                  aria-label={`Image ${index + 1}`}
-                />
-              ))}
-            </div>
+            
           </div>
         </div>
-      )}
+      </div>
+
     </div>
   )
 }

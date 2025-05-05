@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import "./ojt-carousel.css";
+import "./contact-page.css"
+import ContactPage from "./contact-page"
 import OJTCarousel from "./ojt-carousel";
 
 
-import hero from "./assets/hero-bg.jpg";
+import hero from "./assets/bgpo.png";
 import samurai from "./assets/samurai.png";
 import redcloud from "./assets/redclouds.jpg";
 import border from "./assets/border.jpg";
@@ -46,6 +48,16 @@ function App() {
   const [loadedImagesCount, setLoadedImagesCount] = useState(0);
   const [showNav, setShowNav] = useState(false);
   const [totalImages, setTotalImages] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Apply or remove dark-mode class on <body>
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
 
   const handleImageLoad = () => {
     setLoadedImagesCount((prevCount) => prevCount + 1); 
@@ -247,8 +259,41 @@ function App() {
               >
                 Blog
               </a>
+              <a href="#contact"
+                className={activeNav === 'contact' ? 'active' : ''}
+                onClick={() => {
+                  setActiveNav('blog');
+                  setShowNav(false);
+                }}
+              >
+                Contact
+              </a>
             </div>
           </div>
+
+          <button className="modes" onClick={() => setDarkMode(prev => !prev)}>
+            <svg className="mode-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="50px"
+              height="50px"
+              viewBox="0 0 24 24"
+              fill=""
+              stroke={darkMode ? "#fff" : "#000"}
+              strokeWidth="1" 
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+          </button>
 
 
           <div className="hero-page" id="home">
@@ -517,7 +562,7 @@ function App() {
                     <div className="overlay-center">
                       <div className="project-buttons">
                         <a href="https://eixaax1.pythonanywhere.com/" target="_blank" className="project-btn view-btn">View Project</a>
-                        <a href="https://github.com/Eixaax/cswcd-rprt-generator" target="_blank" className="project-btn code-btn">View Code</a>
+                        <a href="https://github.com/Eixaax/cswcd-rprt-generator" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                       </div>
                     </div>
 
@@ -545,7 +590,7 @@ function App() {
 
                     <div className="overlay-center">
                       <div className="project-buttons">
-                      <a href="https://github.com/Eixaax/baljeet" target="_blank" className="project-btn code-btn">View Code</a>
+                      <a href="https://github.com/Eixaax/baljeet" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                         </div>
                     </div>
 
@@ -570,7 +615,7 @@ function App() {
                     <div className="overlay-center">
                       <div className="project-buttons">
                         <a href="https://pokemongew.netlify.app/" target="_blank" className="project-btn view-btn">View Project</a>
-                        <a href="https://github.com/Eixaax/Pokemoncchi" target="_blank" className="project-btn code-btn">View Code</a>
+                        <a href="https://github.com/Eixaax/Pokemoncchi" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                         </div>
                     </div>
 
@@ -595,7 +640,7 @@ function App() {
                     <div className="overlay-center">
                       <div className="project-buttons">
                         <a href="https://ishascical.netlify.app/" target="_blank" className="project-btn view-btn">View Project</a>
-                        <a href="https://github.com/Iszha/react-scical" target="_blank" className="project-btn code-btn">View Code</a>
+                        <a href="https://github.com/Iszha/react-scical" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                         </div>
                     </div>
 
@@ -618,7 +663,7 @@ function App() {
                   <div className="project-overlay">
                     <div className="overlay-center">
                       <div className="project-buttons">
-                        <a href="https://github.com/Eixaax/crimsonThings" target="_blank" className="project-btn code-btn">View Code</a>
+                        <a href="https://github.com/Eixaax/crimsonThings" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                       </div>
                     </div>
 
@@ -642,7 +687,7 @@ function App() {
                   <div className="project-overlay">
                     <div className="overlay-center">
                       <div className="project-buttons">
-                      <a href="https://github.com/Eixaax/wmsures" target="_blank" className="project-btn code-btn">View Code</a>
+                      <a href="https://github.com/Eixaax/wmsures" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                       </div>
                     </div>
 
@@ -661,12 +706,12 @@ function App() {
                   </div>
                   <div className="project-content">
                     <h3>Eco-Watt</h3>
-                    <p>A Machine learning web application designed to predict bills.</p>
+                    <p>A Machine learning web application designed to predict Electric bills.</p>
                   </div>
                   <div className="project-overlay">
                     <div className="overlay-center">
                       <div className="project-buttons">
-                      <a href="https://github.com/Eixaax/eco-watt"  target="_blank" className="project-btn code-btn">View Code</a>
+                      <a href="https://github.com/Eixaax/eco-watt"  target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                       </div>
                     </div>
 
@@ -689,7 +734,7 @@ function App() {
                   <div className="project-overlay">
                     <div className="overlay-center">
                       <div className="project-buttons">
-                      <a href="" target="_blank" className="project-btn code-btn">View Code</a>
+                      <a href="" target="_blank" className="project-btn code-btn">SOURCE CODE</a>
                       </div>
                     </div>
 
@@ -708,6 +753,10 @@ function App() {
 
           <div className="blogs-page observe" id="blog">
             <OJTCarousel />
+          </div>
+
+          <div className="contact-page observe" id ="contact">
+            <ContactPage />
           </div>
         </>
       )}
