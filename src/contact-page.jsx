@@ -25,7 +25,7 @@ export default function ContactPage() {
           just want to connect, I'd love to hear from you.
         </p>
 
-        <a href="mailto:contact@example.com" className="contact-button">
+        <a href="mailto:isaacradjaluddin@gmail.com" className="contact-button">
           Get In Touch
           <svg
             className="mail-icon"
@@ -95,7 +95,7 @@ export default function ContactPage() {
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a href="isaacradjaluddin@gmail.com" target="_blank" className="social-icon" aria-label="Email">
+          <a href="mailto:isaacradjaluddin@gmail.com" target="_blank" className="social-icon" aria-label="Email">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
